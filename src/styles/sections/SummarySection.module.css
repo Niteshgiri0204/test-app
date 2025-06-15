@@ -1,0 +1,9 @@
+.summaryCard {
+  composes: card-common from "../_base.css";
+}
+
+.summaryParagraph {
+  font-size: 1.125rem;
+  color: var(--theme-text-tertiary);
+  line-height: 1.625;
+}

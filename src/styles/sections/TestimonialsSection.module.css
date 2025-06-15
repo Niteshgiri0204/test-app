@@ -1,0 +1,35 @@
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.testimonialCard {
+  composes: card-common from "../_base.css";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonialQuote {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--theme-text-tertiary);
+  margin-bottom: 1rem;
+}
+
+.testimonialAuthor {
+  text-align: right;
+  font-weight: 600;
+  color: var(--theme-text-primary);
+}
+
+.testimonialMoreInfo {
+  color: var(--theme-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .testimonialGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

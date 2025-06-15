@@ -3,5 +3,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
+   base: '/test-app/',
   plugins: [react()],
 })
+
+//npm run deploy

@@ -1,0 +1,25 @@
+.educationCard {
+  composes: card-common from "../_base.css";
+}
+
+.educationItem {
+  margin-bottom: 1rem;
+}
+
+.educationItem:last-child {
+  margin-bottom: 0;
+}
+
+.educationDegree {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--theme-text-white);
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.educationDetails {
+  font-size: 1rem;
+  color: var(--theme-text-tertiary);
+}

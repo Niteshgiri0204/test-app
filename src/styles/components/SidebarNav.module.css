@@ -1,0 +1,231 @@
+.sidebarNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--theme-secondary-bg);
+  box-shadow: var(--shadow-xl);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease-in-out, background-color 500ms ease;
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  overflow-y: auto;
+}
+
+.sidebarNav.minimized {
+  width: 4rem; /* Base width when minimized */
+  align-items: center;
+}
+
+.sidebarNav.maximized {
+  width: 14rem; /* Wider width when maximized */
+  align-items: flex-start;
+  padding-left: 0.5rem; /* Small padding for maximized state */
+  padding-right: 0.5rem;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Hide label when collapsing */
+  white-space: nowrap;
+  color: var(--color-accent);
+}
+
+.logoIcon {
+  margin-right: 0.5rem;
+  display: flex; /* For proper icon centering */
+  align-items: center;
+}
+
+.logoLabel {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--theme-text-primary);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.minimized .logoLabel {
+  opacity: 0;
+  width: 0;
+  margin-right: 0;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--theme-text-secondary);
+  transition: color 0.2s ease, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggleButton:hover {
+  color: var(--theme-text-white);
+  background-color: var(--theme-input-bg);
+}
+
+.navItemsContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Default for minimized */
+  padding-bottom: 1rem;
+  width: 100%;
+  row-gap: 0.75rem;
+}
+
+.maximized .navItemsContainer {
+  align-items: flex-start; /* Align left when maximized */
+}
+
+.sidebarNavItem {
+  position: relative;
+  display: flex;
+  align-items: center; /* Align icon and text horizontally */
+  padding: 0.625rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  color: var(--theme-text-secondary);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: calc(100% - 1rem); /* Fill width with padding considerations */
+  text-decoration: none;
+}
+
+.sidebarNavItem .icon {
+  margin-right: 0; /* No margin when minimized for icons to be centered */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.maximized .sidebarNavItem .icon {
+  margin-right: 0.75rem; /* Margin when maximized for spacing */
+}
+
+.sidebarNavItemLabel {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  color: inherit; /* Inherit color from parent */
+  opacity: 0; /* Initially hidden when minimized */
+  transition: opacity 0.2s ease, width 0.2s ease;
+  flex-grow: 1; /* Allow label to take space */
+  width: 0; /* Hidden width when minimized */
+}
+
+.minimized .sidebarNavItem:hover .sidebarNavItemLabel {
+  position: absolute;
+  left: calc(100% + 0.5rem);
+  background-color: var(--color-accent);
+  color: var(--color-text-white);
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+  width: auto; /* Show full width on hover */
+}
+
+.maximized .sidebarNavItemLabel {
+  opacity: 1;
+  width: auto; /* Show full width when maximized */
+}
+
+.sidebarNavItem:hover {
+  background-color: var(--theme-input-bg);
+  color: var(--theme-text-white);
+  transform: translateY(-2px);
+}
+
+.sidebarNavItem.active {
+  background-color: var(--color-accent);
+  color: var(--color-text-white);
+  transform: scale(1.05);
+  box-shadow: 0 0 0 2px var(--color-text-white), var(--shadow-md);
+}
+
+.themeToggleContainer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--theme-border-dark);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.themeToggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  color: var(--theme-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  text-decoration: none;
+}
+
+.themeToggleButton .icon {
+  margin-right: 0;
+}
+
+.maximized .themeToggleButton .icon {
+  margin-right: 0.75rem;
+}
+
+.themeToggleButton:hover {
+  background-color: var(--theme-input-bg);
+  color: var(--theme-text-white);
+}
+
+/* Sidebar scrollbar styles */
+.sidebarNav::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebarNav::-webkit-scrollbar-track {
+  background: var(--theme-card-bg);
+}
+
+.sidebarNav::-webkit-scrollbar-thumb {
+  background: var(--theme-progress-bg);
+  border-radius: 3px;
+}
+
+.sidebarNav::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-input-bg);
+}
+
+/* Media Queries for overall layout adjustments */
+@media (max-width: 767px) {
+  .sidebarNav.maximized {
+    width: 100%; /* Full width on smaller screens when expanded */
+  }
+}
+

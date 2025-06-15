@@ -1,0 +1,15 @@
+.whyMeCard {
+  composes: card-common from "../_base.css";
+}
+
+.whyMeList {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 0;
+  row-gap: 0.75rem;
+  color: var(--theme-text-tertiary);
+}
+
+.whyMeList strong {
+  color: var(--theme-text-white);
+}

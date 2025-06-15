@@ -1,0 +1,64 @@
+.footer {
+  background-color: var(--theme-secondary-bg);
+  padding: 2rem;
+  text-align: center;
+  color: var(--theme-text-tertiary);
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  box-shadow: var(--shadow-inner);
+  margin-top: 3rem;
+  transition: background-color 500ms ease, color 500ms ease;
+}
+
+.footerTextSmall {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.footerSocialLinks {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.footerSocialLink {
+  color: var(--theme-text-tertiary);
+  transition: color 200ms ease;
+  text-decoration: none;
+}
+
+.footerSocialLink:hover {
+  color: var(--theme-text-primary);
+}
+
+.footerDownloadButtonWrapper {
+  margin-top: 1.5rem;
+}
+
+.footerDownloadButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--color-button-resume);
+  color: var(--color-text-white);
+  font-weight: 600;
+  border-radius: 9999px;
+  box-shadow: var(--shadow-xl);
+  transform: scale(1);
+  transition: all 300ms ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.footerDownloadButton:hover {
+  background-color: var(--color-button-resume-hover);
+  transform: scale(1.05);
+}
+
+.footerDownloadButton:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--color-text-white), 0 0 0 calc(2px + 2px) var(--theme-primary-bg);
+}

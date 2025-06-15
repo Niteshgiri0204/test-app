@@ -1,68 +1,113 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import 'bootstrap/dist/css/bootstrap.min.css'; /* Bootstrap CSS FIRST */
+@import './styles/_variables.css';
+@import './styles/_base.css';
+@import './styles/_animations.css';
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* Import Component Specific CSS Modules */
+@import './styles/components/ErrorBoundary.module.css';
+@import './styles/components/Footer.module.css';
+@import './styles/components/HeroSection.module.css';
+@import './styles/components/ProjectModal.module.css';
+@import './styles/components/SectionContainer.module.css';
+@import './styles/components/SidebarNav.module.css';
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* Import Section Specific CSS Modules */
+@import './styles/sections/EducationSection.module.css';
+@import './styles/sections/ExperienceSection.module.css';
+@import './styles/sections/InterviewPrepSection.module.css';
+@import './styles/sections/MyProcessSection.module.css';
+@import './styles/sections/ProjectsSection.module.css';
+@import './styles/sections/RolesResponsibilitiesSection.module.css';
+@import './styles/sections/SkillsSection.module.css';
+@import './styles/sections/SummarySection.module.css';
+@import './styles/sections/TestimonialsSection.module.css';
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+/* Main Layout Styles */
+.main-container {
   min-height: 100vh;
+  color: var(--theme-text-primary);
+  background-color: var(--theme-primary-bg);
+  display: flex;
+  transition: background-color 500ms ease, color 500ms ease;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.main-content {
+   flex: 1;
+  margin-left: 4rem; /* Initial margin for minimized sidebar */
+  transition: margin-left 0.3s ease-in-out; /* Match sidebar transition */
+  width: calc(100% - 4rem); /* Calculate width based on initial margin */
+  box-sizing: border-box;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* Scrollbar Styles for Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme-secondary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-hover);
+}
+
+/* General Card Style */
+.card-common {
+  background-color: var(--theme-card-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-md);
+  transition: all 300ms ease;
+}
+
+.card-common:hover {
+  transform: scale(1.01);
+  box-shadow: var(--shadow-xl);
+}
+
+
+/* Media Queries for overall layout adjustments */
+@media (min-width: 768px) {
+  .main-content {
+     margin-left: 5rem; 
+    width: calc(100% - 5rem);
+  }
+}
+
+.themeToggleButtonFloating {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--color-accent);
+  color: var(--theme-text-white);
+  border: none;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xl);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.3s ease-in-out;
+  z-index: 50;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.themeToggleButtonFloating:hover {
+  background-color: var(--color-accent-hover);
+  transform: scale(1.1);
+}
+
+.themeToggleButtonFloating:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--color-text-white), 0 0 0 calc(2px + 2px) var(--theme-primary-bg), var(--shadow-xl);
 }

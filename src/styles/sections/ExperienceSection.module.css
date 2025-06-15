@@ -1,0 +1,32 @@
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.experienceCard {
+  composes: card-common from "../_base.css";
+}
+
+.experienceTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--theme-text-white);
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.experienceDuration {
+  font-size: 1rem;
+  color: var(--theme-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.experienceDescriptionList {
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 0;
+  row-gap: 0.5rem;
+  color: var(--theme-text-tertiary);
+}

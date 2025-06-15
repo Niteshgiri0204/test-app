@@ -1,0 +1,72 @@
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.skillCard {
+  composes: card-common from "../_base.css";
+}
+
+.skillCategoryTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--theme-text-white);
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skillList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+}
+
+.skillName {
+  width: 50%;
+  color: var(--theme-text-tertiary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.skillBarContainer {
+  width: 50%;
+  background-color: var(--theme-progress-bg);
+  border-radius: 9999px;
+  height: 0.625rem;
+}
+
+.skillBarFill {
+  height: 0.625rem;
+  border-radius: 9999px;
+  background-color: var(--color-accent);
+  transition: width 1000ms ease-out;
+}
+
+.skillPercentage {
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--theme-text-primary);
+}
+
+@media (min-width: 768px) {
+  .skillName {
+    width: 40%;
+  }
+  .skillBarContainer {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .skillsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

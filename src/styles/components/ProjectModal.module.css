@@ -1,0 +1,137 @@
+.projectModalDialog .modal-content {
+  background-color: var(--theme-card-bg) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: var(--shadow-2xl) !important;
+  color: var(--theme-text-primary) !important;
+  border: none !important;
+}
+
+.modalHeader {
+  border-bottom: 2px solid var(--theme-border-dark) !important;
+  background-color: var(--theme-card-bg) !important;
+  padding: 1.5rem 1.5rem 0.75rem 1.5rem !important; /* Adjusted padding */
+}
+
+.modalHeader .btn-close {
+  filter: invert(1); /* Makes Bootstrap's close icon white */
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.modalHeader .btn-close:hover {
+  opacity: 1;
+}
+
+.modalTitle {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: var(--theme-text-white) !important;
+  padding-bottom: 0.5rem;
+}
+
+.modalBody {
+  padding: 1.5rem !important;
+  background-color: var(--theme-card-bg) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+.modalImage {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.modalTextSection {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  color: var(--theme-text-tertiary);
+  font-size: 1.125rem;
+  line-height: 1.625;
+}
+
+.modalSectionTitle {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--theme-text-white);
+  margin-bottom: 0.5rem;
+}
+
+.modalTechList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.modalTechList .modalSectionTitle {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.modalTechTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-accent);
+  color: var(--color-accent-text);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.modalFooter {
+  border-top: 2px solid var(--theme-border-dark) !important;
+  background-color: var(--theme-card-bg) !important;
+  padding: 0.75rem 1.5rem 1.5rem 1.5rem !important; /* Adjusted padding */
+}
+
+.modalGithubButton {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--theme-input-bg) !important;
+  color: var(--color-link-github) !important;
+  border-radius: 9999px !important;
+  font-weight: 500 !important;
+  transition: all 200ms ease !important;
+  box-shadow: var(--shadow-md) !important;
+  text-decoration: none !important;
+  border: none !important;
+}
+
+.modalGithubButton:hover {
+  background-color: var(--theme-progress-bg) !important;
+  color: var(--color-link-github) !important;
+}
+
+.modalLiveDemoButton {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-accent) !important;
+  color: var(--color-text-white) !important;
+  border-radius: 9999px !important;
+  font-weight: 500 !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: all 200ms ease !important;
+  text-decoration: none !important;
+  border: none !important;
+}
+
+.modalLiveDemoButton:hover {
+  background-color: var(--color-accent-hover) !important;
+  color: var(--color-text-white) !important;
+}
+
+@media (min-width: 768px) {
+  .modalImage {
+    height: 24rem;
+  }
+  .modalTitle {
+    font-size: 2.25rem !important;
+  }
+}
